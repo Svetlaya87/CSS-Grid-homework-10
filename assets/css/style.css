@@ -111,10 +111,6 @@ footer {
         
 }
 
-button.handbags:focus-visible, button.watch:focus-visible, button.shoes:focus-visible {
-    border: 0px;
-}
-
 
 .handbags span, .watch span, .shoes span {
     font-size: 0.625rem;
