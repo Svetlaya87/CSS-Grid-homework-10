@@ -119,7 +119,7 @@ footer {
 }
 
 
-aside>div a {
+aside>div+div a {
     text-decoration: none;
 }
 
