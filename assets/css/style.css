@@ -36,7 +36,13 @@ nav>div a {
     border-right: 1px solid #e9e9e9;
 }
 
+
+
 ul>li:last-child>a {
+    border-right: 0px;
+}
+
+ul>li:last-child>a:hover {
     border-right: 0px;
 }
 
@@ -45,6 +51,11 @@ nav>div a:hover {
     color: black;
     font-weight: 600;
 }
+
+nav>div a:focus-visible {
+    border: none;
+}
+
 
 /*баннера*/
 aside {
@@ -95,12 +106,29 @@ footer {
     background-repeat: no-repeat;
     background-size: cover;
     position: relative;
+    border: 0px;
+    padding:0px;
     
 }
 
-.handbags span, .watch span, .shoes span, div.card>img+h6 {
-    font-size: 0.625rem;
+button.handbags:focus-visible, button.watch:focus-visible, button.shoes:focus-visible {
+    border: 0px;
 }
+
+
+.handbags span, .watch span, .shoes span {
+    font-size: 0.625rem;
+    text-align: left;
+}
+
+aside button>h5 {
+    text-align: left;
+}
+
+
+
+
+
 
 
 .watch {
@@ -123,6 +151,11 @@ footer {
     text-decoration: underline;
 }
 
+
+button.handbags:focus-visible, button.watch:focus-visible, button.shoes:focus-visible {
+    border: 0px;
+}
+
 .top-menu-btn {
     
     grid-area: top-menu-btn;
@@ -139,6 +172,14 @@ footer {
     border: rgb(58, 58, 58);
     
 }
+
+.top-menu-btn .btn:focus {
+    
+    box-shadow: 0 0 0 0.15rem rgba(255, 255, 255, 0.5);
+    
+}
+
+
 
 div.card>img {
    
