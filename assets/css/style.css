@@ -1,0 +1,295 @@
+
+.box {
+    background-color: #e9e9e9 ;
+}
+.container {
+    min-width: 940px;
+    background-color: #e9e9e9 ;
+}
+
+
+header h1 {
+
+    font-size: 4rem;
+}
+
+header>h1>span+span {
+    color:  #cccbcb;
+
+} 
+
+header {
+    background-color:white ;
+    
+    border-bottom: 2px solid #e9e9e9;
+}
+
+header+div, aside, main, footer, .contacts, .links {
+    background-color:white ;
+}
+
+footer {
+    background-color: #212529;
+}
+
+nav>div a {
+    border-right: 1px solid #e9e9e9;
+}
+
+ul>li:last-child>a {
+    border-right: 0px;
+}
+
+nav>div a:hover {
+    border-right: 1px solid #e9e9e9;
+    color: black;
+    font-weight: 600;
+}
+
+/*баннера*/
+aside {
+    
+    
+
+    /*гид не управляет самим контейнером, а только к тем элементам , котоыре внутри. т.е паддинги для краев мы задаем самостоятельно. Также , чтобы прижать футер к подвалу пишем минимальную  высоту*/
+    display: grid;
+    grid-gap:10px;
+    grid-template-columns:  repeat(3, 1fr);
+    grid-template-rows: 320px 140px;
+    grid-gap: 10px 10px;
+   
+    grid-template-areas: "big-banner        big-banner         big-banner"
+                         "handbags          shoes              watch";
+    
+}
+
+header {
+    grid-area: header;
+}
+main {
+    grid-area: main;
+}
+
+aside {
+    grid-area: aside;
+    
+}
+
+footer {
+    grid-area: footer;
+}
+
+.big-banner {
+    
+    grid-area: big-banner;
+    overflow: hidden;
+    
+}
+
+.handbags, .watch, .shoes {
+    
+    grid-area: handbags;
+    max-width: 100%;
+    background-image: url("../img/banner-landscape.jpg");
+    background-position: top;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+    
+}
+
+.handbags span, .watch span, .shoes span, div.card>img+h6 {
+    font-size: 0.625rem;
+}
+
+
+.watch {
+    grid-area: watch;
+    background-image: url("../img/painting-landscape.jpg");
+    background-position: center;
+     
+    
+    
+}
+
+.shoes {
+    grid-area: shoes;
+    background-image: url("../img/dinozaur-landscape.jpg");
+    background-position: bottom center;
+        
+}
+
+.handbags:hover h5, .watch:hover h5, .shoes:hover h5, div.card:hover>img+h6 {
+    text-decoration: underline;
+}
+
+.top-menu-btn {
+    
+    grid-area: top-menu-btn;
+    display: inline-block;
+    background-color: rgb(58, 58, 58);
+    box-shadow: 0 15px 3rem black;
+    min-width: 820px;
+    
+}
+
+    
+.top-menu-btn .btn {
+    background-color: rgb(58, 58, 58);
+    border: rgb(58, 58, 58);
+    
+}
+
+div.card>img {
+   
+    
+    max-width: 100%;
+    height: 300px;
+    object-fit: cover;
+    
+    overflow: hidden;
+}
+
+
+div.card:hover button[title="Add-to-Card"] {
+    background: gray;
+    border: 1px solid gray;
+}
+
+
+/* Контейнер  main, установка свойств */
+
+main {
+    
+    
+
+    /*гид не управляет самим контейнером, а только к тем элементам , котоыре внутри. т.е паддинги для краев мы задаем самостоятельно. Также , чтобы прижать футер к подвалу пишем минимальную  высоту*/
+    display: grid;
+    grid-gap: 50px 12px;
+    
+    grid-template-columns:  repeat(4, 1fr);
+    grid-template-rows: repeat(2,  1fr);
+    justify-content: space-between;
+    grid-template-areas: "jeens-shoes    jeens-shoes-bluth    jeens-shoes-sweeter  jeens"
+                         "poncho         t-short-girl         t-shirt-pink         many-t-shorts";
+    
+}
+
+main.cards div[title="jeens-shoes"] {
+    grid-area: jeens-shoes;
+}
+
+main.cards div[title="jeens-shoes-bluth"] {
+    grid-area: jeens-shoes-bluth;
+}
+
+main.cards div[title="jeens-shoes-sweeter"] {
+    grid-area: jeens-shoes-sweeter;
+}
+
+main.cards div[title="jeens"] {
+    grid-area: jeens;
+}
+
+main.cards div[title="poncho"] {
+    grid-area: poncho;
+}
+
+main.cards div[title="t-short-girl"] {
+    grid-area: t-short-girl;
+}
+
+
+main.cards div[title="t-shirt-pink"] {
+    grid-area: t-shirt-pink;
+}
+
+main.cards div[title="many-t-shorts"] {
+    grid-area: many-t-shorts;
+}
+
+
+/*footer*/
+
+div[title="information"], div[title="customer-service"], div[title="extras"], div[title="my-account"] {
+    font-family: 'Roboto', sans-serif;
+    
+}
+
+div[title="information"] h6, div[title="customer-service"] h6, div[title="extras"] h6, div[title="my-account"] h6  {
+    font-size: 1.5rem;
+    
+}
+
+div[title="information"] button, div[title="customer-service"] button, div[title="extras"] button, div[title="my-account"] button {
+    border: 0px;
+    border-bottom: 1px solid #e9e9e9;
+}
+
+div[title="information"] button:last-child, div[title="customer-service"] button:last-child, div[title="extras"] button:last-child, div[title="my-account"] button:last-child {
+    border: 0px;
+    
+}
+
+div[title="information"] button:hover, div[title="customer-service"] button:hover, div[title="extras"] button:hover, div[title="my-account"] button:hover {
+    font-weight: 500;
+}
+
+
+
+.contacts {
+    border-top: 3px solid #e9e9e9 ;
+    border-bottom: 3px solid #e9e9e9 ;;
+}
+
+.call-us {
+    text-align: center;
+    padding: 16px 72px;
+    border-right: 1px solid #e9e9e9;
+    border-left: 1px solid #e9e9e9;
+}
+
+
+/*footer-grid*/
+
+
+.links  {
+    display: grid;
+    grid-column-gap:30px;
+    grid-template-columns:  repeat(4, 1fr);
+    grid-template-rows: repeat(1,  1fr);
+    justify-content: stretch;
+    justify-items: stretch;
+    grid-template-areas: "information    customer-service   extras      my-account";
+                       
+}
+
+div[title="information"] {
+    grid-area: information;
+}
+
+
+div[title="customer-service"] {
+    grid-area: customer-service;
+}
+
+
+div[title="extras"] {
+    grid-area: extras;
+}
+
+div[title="my-account"] {
+    grid-area: my-account;
+}
+
+/*
+div[title="copyrights"] {
+    grid-area: copyrights;
+    justify-self: stretch;
+}
+*/
+
+
+div[title="information"]>*, div[title="customer-service"]>*, div[title="extras"]>*, div[title="my-account"]>*,  div[title="copyrights"]>*  {
+    padding-left: 0px;
+}
