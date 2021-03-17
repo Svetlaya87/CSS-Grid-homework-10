@@ -122,11 +122,6 @@ aside button>h5 {
 }
 
 
-
-
-
-
-
 .watch {
     grid-area: watch;
     background-image: url("../img/painting-landscape.jpg");
@@ -143,14 +138,18 @@ aside button>h5 {
         
 }
 
+
+button.handbags:focus-visible, button.watch:focus-visible, button.shoes:focus-visible {
+    border: 0px;
+}
+
+
 .handbags:hover h5, .watch:hover h5, .shoes:hover h5, div.card:hover>img+h6 {
     text-decoration: underline;
 }
 
 
-button.handbags:focus-visible, button.watch:focus-visible, button.shoes:focus-visible {
-    border: 0px;
-}
+
 
 .top-menu-btn {
     
