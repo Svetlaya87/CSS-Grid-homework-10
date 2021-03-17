@@ -47,13 +47,14 @@ ul>li:last-child>a:hover {
 }
 
 nav>div a:hover {
-    border-right: 1px solid #e9e9e9;
-    color: black;
+   /* border-right: 1px solid #e9e9e9;
+    color: black;*/
     font-weight: 600;
 }
 
 nav>div a:focus-visible {
     border: none;
+    color: transparent;
 }
 
 
@@ -117,7 +118,16 @@ footer {
     text-align: left;
 }
 
-aside button>h5 {
+
+aside a {
+    text-decoration: none;
+}
+
+aside a:focus-visible {
+    color: transparent;
+}
+
+aside div>a h5 {
     text-align: left;
 }
 
@@ -139,8 +149,9 @@ aside button>h5 {
 }
 
 
-button.handbags:focus-visible, button.watch:focus-visible, button.shoes:focus-visible {
-    border: 0px;
+.handbags:focus-visible, .watch:focus-visible, .shoes:focus-visible {
+    /*border: 0px;*/
+    color: transparent;
 }
 
 
