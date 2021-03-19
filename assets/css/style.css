@@ -34,12 +34,21 @@ footer {
 
 nav>div a {
     border-right: 1px solid #e9e9e9;
+    min-width: 155px; /* add 19.03.21*/
+    text-align: center;
 }
 
+
+/* add 19.03.21*/
+nav>div>a {
+    text-align: left;
+    min-width: 90px; /* add 19.03.21*/
+}
 
 
 ul>li:last-child>a {
     border-right: 0px;
+    text-align: left;
 }
 
 ul>li:last-child>a:hover {
@@ -56,6 +65,12 @@ nav>div a:focus-visible {
     border: none;
     color: transparent;
 }
+
+/*19/03/21*/
+nav>div a {
+    outline: none;
+}
+
 
 
 /*баннера*/
@@ -127,9 +142,23 @@ aside a:focus-visible {
     color: transparent;
 }
 
-aside div>a h5 {
+
+/*
+aside button>a>.Heading-5 {
     text-align: left;
+    font-size: 1rem;
+    text-decoration: none;
 }
+*/
+
+
+
+aside button>a, aside button>a>span.zagolovok-5  {
+    font-size: 1.5rem;
+    text-align: left;
+    text-decoration: none;
+}
+
 
 
 .watch {
@@ -155,7 +184,7 @@ aside div>a h5 {
 }
 
 
-.handbags:hover h5, .watch:hover h5, .shoes:hover h5, div.card:hover>img+h6 {
+.handbags:hover .zagolovok-5, .watch:hover .zagolovok-5, .shoes:hover .zagolovok-5, div.card:hover>img+h6 {
     text-decoration: underline;
 }
 
