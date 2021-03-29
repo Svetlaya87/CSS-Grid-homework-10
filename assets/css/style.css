@@ -3,14 +3,14 @@
     background-color: #e9e9e9 ;
 }
 .container {
-    min-width: 940px;
+    min-width: 393px;
     background-color: #e9e9e9 ;
 }
 
 
 header h1 {
 
-    font-size: 4rem;
+    font-size: 3rem;
 }
 
 header>h1>span+span {
@@ -22,6 +22,7 @@ header {
     background-color:white ;
     
     border-bottom: 2px solid #e9e9e9;
+    padding: 4px 8px;
 }
 
 header+div, aside, main, footer, .contacts, .links {
@@ -33,17 +34,18 @@ footer {
 }
 
 nav>div a {
-    border-right: 1px solid #e9e9e9;
-    min-width: 155px; /* add 19.03.21*/
-    text-align: center;
+    border-right: 0px solid #e9e9e9;
+    /*min-width: 155px; /* add 21.03.21 min-width: 940px*/
+    text-align: left;
+    
 }
 
 
 /* add 19.03.21*/
-nav>div>a {
+/*nav>div>a {
     text-align: left;
-    min-width: 90px; /* add 19.03.21*/
-}
+    /*min-width: 90px; /* add 21.03.21* min-width: 940px */
+/*}*/
 
 
 ul>li:last-child>a {
@@ -76,17 +78,21 @@ nav>div a {
 /*баннера*/
 aside {
     
+    padding: 8px;
+    padding-top: 0px;
     
 
     /*гид не управляет самим контейнером, а только к тем элементам , котоыре внутри. т.е паддинги для краев мы задаем самостоятельно. Также , чтобы прижать футер к подвалу пишем минимальную  высоту*/
     display: grid;
     grid-gap:10px;
-    grid-template-columns:  repeat(3, 1fr);
-    grid-template-rows: 320px 140px;
+    grid-template-columns:  1fr;
+    grid-template-rows: 150px repeat(3, 140px);
     grid-gap: 10px 10px;
    
-    grid-template-areas: "big-banner        big-banner         big-banner"
-                         "handbags          shoes              watch";
+    grid-template-areas: "big-banner"
+                         "handbags"
+                         "shoes"
+                         "watch" ;
     
 }
 
@@ -189,15 +195,20 @@ aside button>a, aside button>a>span.zagolovok-5  {
 }
 
 
-
-
+.top-menu-btn-padding {
+    padding: 8px;
+    padding-bottom: 0px;
+}
 .top-menu-btn {
     
     grid-area: top-menu-btn;
-    display: inline-block;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
     background-color: rgb(58, 58, 58);
-    box-shadow: 0 15px 3rem black;
-    min-width: 820px;
+    box-shadow: 0 15px 20px -11px black;
+    min-width: 353px;  /* add 21.03.21* min-width: 940px */
+    
     
 }
 
@@ -205,11 +216,15 @@ aside button>a, aside button>a>span.zagolovok-5  {
 .top-menu-btn .btn {
     background-color: rgb(58, 58, 58);
     border: rgb(58, 58, 58);
+    margin: 0px;  /*add 21.03.21* min-width: 940px*/
+
+    position: relative;
+    z-index: 1;
     
 }
 
 .top-menu-btn .btn:focus {
-    
+    z-index: 2;
     box-shadow: 0 0 0 0.15rem rgba(255, 255, 255, 0.5);
     
 }
@@ -241,13 +256,21 @@ main {
 
     /*гид не управляет самим контейнером, а только к тем элементам , котоыре внутри. т.е паддинги для краев мы задаем самостоятельно. Также , чтобы прижать футер к подвалу пишем минимальную  высоту*/
     display: grid;
-    grid-gap: 50px 12px;
+    grid-gap: 12px 0px;
     
-    grid-template-columns:  repeat(4, 1fr);
-    grid-template-rows: repeat(2,  1fr);
+    grid-template-columns:  1fr;
+    grid-template-rows: repeat(8,  1fr);
     justify-content: space-between;
-    grid-template-areas: "jeens-shoes    jeens-shoes-bluth    jeens-shoes-sweeter  jeens"
-                         "poncho         t-short-girl         t-shirt-pink         many-t-shorts";
+    grid-template-areas:  "jeens-shoes"
+                          "jeens-shoes-bluth"  
+                          "jeens-shoes-sweeter"
+                          "jeens"
+                          "poncho" 
+                          "t-short-girl"
+                          "t-shirt-pink" 
+                          "many-t-shorts";
+    padding: 0px 8px;
+    padding-bottom: 12px; 
     
 }
 
@@ -323,22 +346,29 @@ div[title="information"] button:hover, div[title="customer-service"] button:hove
     padding: 16px 72px;
     border-right: 1px solid #e9e9e9;
     border-left: 1px solid #e9e9e9;
-    min-width: 602px;
+    min-width: 576px; /* add 21.03.21* min-width: 940px */
 }
+
+
 
 
 /*footer-grid*/
 
 
 .links  {
+
+    padding: 20px 8px;
+    
     display: grid;
-    grid-column-gap:30px;
-    grid-template-columns:  repeat(4, 1fr);
-    grid-template-rows: repeat(1,  1fr);
+    grid-row-gap:20px;
+    grid-template-columns:  repeat(1, 1fr);
+    grid-template-rows: repeat(4,  1fr);
     justify-content: stretch;
     justify-items: stretch;
-    grid-template-areas: "information    customer-service   extras      my-account";
-                       
+    grid-template-areas:    "information"    
+                            "customer-service"   
+                            "extras"      
+                            "my-account";
 }
 
 div[title="information"] {
@@ -369,4 +399,250 @@ div[title="copyrights"] {
 
 div[title="information"]>*, div[title="customer-service"]>*, div[title="extras"]>*, div[title="my-account"]>*,  div[title="copyrights"]>*  {
     padding-left: 0px;
+}
+
+
+
+
+
+@media (min-width: 576px) {
+    
+    aside {
+        grid-gap:10px;
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: 150px 140px;
+        grid-gap: 10px 10px;
+   
+        grid-template-areas:"big-banner big-banner big-banner"
+                            "handbags   shoes      watch" ;
+    }         
+    
+    main {
+        grid-template-columns:  1fr 1fr;
+        grid-template-rows: repeat(4,  1fr);
+        justify-content: space-between;
+        grid-template-areas:    "jeens-shoes         jeens-shoes-bluth"  
+                                "jeens-shoes-sweeter jeens"
+                                "poncho              t-short-girl"
+                                "t-shirt-pink        many-t-shorts";
+    }   
+    
+    
+    .links {
+
+        padding: 20px 10px;
+
+        grid-gap:20px 20px;
+        grid-template-columns:  repeat(2, 1fr);
+        grid-template-rows: repeat(2,  1fr);
+        grid-template-areas:    "information customer-service"   
+                                "extras      my-account";
+    }
+
+}
+
+@media (min-width: 768px) {
+
+    button.navbar-toggler, .navbar-toggler-icon {
+        display: none;
+    }
+
+    .collapse.navbar-collapse {
+        flex-basis: 0px;
+    }
+
+    .navbar-brand {
+        padding-left: 0px;
+    }
+
+    
+    
+    li.nav-item a.nav-link {
+
+        border-right: 1px solid #e9e9e9;
+        padding: 8px 8px;
+        
+        min-width: 140px; /* add 21.03.21*/
+        text-align: center;
+        
+        
+    }
+
+    ul li.nav-item:last-child >a.nav-link {
+        border-right: 0px;
+        text-align: left;
+    }    
+    
+
+    nav>div>a {
+        border-right: 1px solid #e9e9e9;
+        min-width: 90px;
+        text-align: center;
+    }
+
+    nav>.container-fluid { /* было в теге как будстрап, сейчас здесь*/
+        display:flex;
+        flex-direction: row; 
+        justify-content: flex-start; 
+        align-items:baseline;
+    }
+
+    nav .collapse.navbar-collapse { /* было в теге как будстрап, сейчас здесь*/
+        display:flex;
+        flex-direction: row;
+    }
+
+    ul.navbar-nav { /* было в теге как будстрап, сейчас здесь*/
+        display:flex;
+        flex-direction: row;
+    }
+
+}
+
+@media (min-width: 940px) {
+
+    .container {
+        min-width: 940px;
+        
+    }
+
+    header {
+        padding: 24px 48px;
+
+    }
+
+    header h1 {
+
+        font-size: 4rem;
+    }
+
+    button.navbar-toggler, .navbar-toggler-icon {
+        display: none;
+    }
+
+    .collapse.navbar-collapse {
+        flex-basis: 0px;
+    }
+
+    .navbar-brand {
+        padding-left: 0px;
+    }
+
+    nav>div a {
+
+
+        border-right: 1px solid #e9e9e9;
+        min-width: 155px; /* add 21.03.21*/
+        text-align: center; /* add 24.03.21*/
+        padding: 8px 24px;
+        
+    }
+
+    /*
+    nav>div a {
+        border-right: 1px solid #e9e9e9;
+        /*min-width: 155px; /* add 21.03.21 min-width: 940px*/
+   /* }*/
+    
+    
+
+
+    nav>div>a {
+        
+        min-width: 90px;
+        text-align: left;
+    }
+
+    nav>.container-fluid { /* было в теге как будстрап, сейчас здесь*/
+        display:flex;
+        flex-direction: row; 
+        justify-content: flex-start; 
+        align-items:baseline;
+    }
+
+    nav .collapse.navbar-collapse { /* было в теге как будстрап, сейчас здесь*/
+        display:flex;
+        flex-direction: row;
+    }
+
+    ul.navbar-nav { /* было в теге как будстрап, сейчас здесь*/
+        display:flex;
+        flex-direction: row;
+    }
+
+    .top-menu-btn-padding {
+        padding: 48px;
+        padding-bottom: 0px;
+    }
+
+
+    .top-menu-btn {
+        display: inline-block;
+        min-width: 820px;  /* add 21.03.21* min-width: 940px */
+        
+    }
+
+    .top-menu-btn .btn {
+        background-color: rgb(58, 58, 58);
+        border: rgb(58, 58, 58);
+        margin-left: -1px;
+        
+    }
+
+    .call-us {
+        
+        min-width: 602px; /* add 21.03.21* min-width: 940px */
+    }
+
+    
+
+    aside {
+    
+    
+        padding: 48px;
+        padding-top: 0px;
+        /*гид не управляет самим контейнером, а только к тем элементам , котоыре внутри. т.е паддинги для краев мы задаем самостоятельно. Также , чтобы прижать футер к подвалу пишем минимальную  высоту*/
+        display: grid;
+        grid-gap:10px;
+        grid-template-columns:  repeat(3, 1fr);
+        grid-template-rows: 320px 140px;
+        grid-gap: 10px 10px;
+       
+        grid-template-areas: "big-banner        big-banner         big-banner"
+                             "handbags          shoes              watch";
+        
+    }
+
+    main {
+    
+    
+
+        /*гид не управляет самим контейнером, а только к тем элементам , котоыре внутри. т.е паддинги для краев мы задаем самостоятельно. Также , чтобы прижать футер к подвалу пишем минимальную  высоту*/
+        display: grid;
+        grid-gap: 50px 12px;
+        
+        grid-template-columns:  repeat(4, 1fr);
+        grid-template-rows: repeat(2,  1fr);
+        justify-content: space-between;
+        grid-template-areas: "jeens-shoes    jeens-shoes-bluth    jeens-shoes-sweeter  jeens"
+                             "poncho         t-short-girl         t-shirt-pink                                    many-t-shorts";
+
+        padding: 0px 48px;
+        padding-bottom: 16px;                     
+        
+    }
+
+    .links  {
+        padding: 48px;
+
+        display: grid;
+        grid-column-gap:30px;
+        grid-template-columns:  repeat(4, 1fr);
+        grid-template-rows: repeat(1,  1fr);
+        justify-content: stretch;
+        justify-items: stretch;
+        grid-template-areas: "information   customer-service extras my-account";
+                           
+    }
+
 }
